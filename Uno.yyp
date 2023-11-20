@@ -31,6 +31,7 @@
     {"id":{"name":"obj_lose","path":"objects/obj_lose/obj_lose.yy",},"order":2,},
     {"id":{"name":"snd_card","path":"sounds/snd_card/snd_card.yy",},"order":0,},
     {"id":{"name":"snd_shield","path":"sounds/snd_shield/snd_shield.yy",},"order":7,},
+    {"id":{"name":"spr_guy","path":"sprites/spr_guy/spr_guy.yy",},"order":64,},
     {"id":{"name":"spr_white","path":"sprites/spr_white/spr_white.yy",},"order":52,},
     {"id":{"name":"spr_red_eraser","path":"sprites/spr_red_eraser/spr_red_eraser.yy",},"order":50,},
     {"id":{"name":"spr_back","path":"sprites/spr_back/spr_back.yy",},"order":45,},
