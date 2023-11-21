@@ -11,16 +11,19 @@ if(obj_manager.player_selected == noone)
 			target_y = original_y - 10;
 			target_depth = -1000;
 			middle_card = ds_list_find_value(obj_manager.discard, ds_list_size(obj_manager.discard) - 1);
-			if(mouse_check_button_pressed(mb_left) && 
-				(number == middle_card.number || card_color == middle_card.card_color || 
-					wild || middle_card.card_color == "wild"))
+			if(mouse_check_button_pressed(mb_left))
 			{
-				obj_manager.player_selected = id;
-				discardCard(obj_manager.player_hand, id);
-				id.in_player_hand = false;
-				//move selected card to center
-				/*target_x = room_width / 2 - sprite_width/2;
-				target_y = room_height / 2 - sprite_height/2 + obj_manager.center_y_offset;*/
+				if (number == middle_card.number || card_color == middle_card.card_color || 
+					wild || middle_card.card_color == "wild")
+				{
+					obj_manager.player_selected = id;
+					discardCard(obj_manager.player_hand, id);
+					id.in_player_hand = false;
+				}
+				else
+				{
+					audio_play_sound(snd_unplayable, 1, 0);
+				}
 			}
 		}
 		else

@@ -97,4 +97,5 @@ for(var _i = 0; _i < num_cards; _i++)
 {
 	deck[|_i].target_depth = num_cards - _i;
 	deck[|_i].target_y = y - _i;
+	deck[|_i].original_y = y - _i;
 }

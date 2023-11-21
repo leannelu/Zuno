@@ -62,24 +62,33 @@ switch(global.state)
 			//draw from deck
 			if (ds_list_size(deck) != 0)
 			{
-				if(position_meeting(mouse_x, mouse_y, _deck_card) && mouse_check_button_pressed(mb_left))
+				if(position_meeting(mouse_x, mouse_y, _deck_card)) 
 				{
-					var _player_hand_count = ds_list_size(player_hand);
-					ds_list_delete(deck, ds_list_size(deck) - 1);
-					ds_list_add(player_hand, _deck_card);
-					audio_play_sound(snd_card, 1, 0);
-					_deck_card.target_x = center_x_offset + _player_hand_count * hand_x_offset;
-					_deck_card.target_y = room_height - hand_y_offset - 131; //sprite height
-					//save y position for later
-					_deck_card.original_y = _deck_card.target_y;
+					_deck_card.highlight = true;
+					if(mouse_check_button_pressed(mb_left))
+					{
+						var _player_hand_count = ds_list_size(player_hand);
+						ds_list_delete(deck, ds_list_size(deck) - 1);
+						ds_list_add(player_hand, _deck_card);
+						audio_play_sound(snd_card, 1, 0);
+						_deck_card.target_x = center_x_offset + _player_hand_count * hand_x_offset;
+						_deck_card.target_y = room_height - hand_y_offset - 131; //sprite height
+						//save y position for later
+						_deck_card.original_y = _deck_card.target_y;
+						_deck_card.highlight = false;
 			
-					_deck_card.face_up = true;
-					_deck_card.in_player_hand = true;
-					move_time = 0;
-					reveal_time = 0;
-					//resetHand(player_hand, "player");
-					next_turn = "player";
-					global.state = STATES.PLAYER_RESOLVE;
+						_deck_card.face_up = true;
+						_deck_card.in_player_hand = true;
+						move_time = 0;
+						reveal_time = 0;
+						//resetHand(player_hand, "player");
+						next_turn = "player";
+						global.state = STATES.PLAYER_RESOLVE;
+					}
+				}
+				else
+				{
+					_deck_card.highlight = false;	
 				}
 			}
 			compare_time = 0;
@@ -588,6 +597,7 @@ switch(global.state)
 						audio_play_sound(snd_card, 1, 0);
 						deck[|shuffle_i].target_depth = num_cards - shuffle_i;
 						deck[|shuffle_i].target_y = y - shuffle_i;
+						deck[|shuffle_i].original_y = y - shuffle_i;
 						shuffle_i++;
 						move_time = 0;
 					}

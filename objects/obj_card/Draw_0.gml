@@ -24,23 +24,6 @@ else
 }
 
 draw_self();
-/*
-if(color_index == 0)
-{
-	card_color = "blue";	
-}
-else if(color_index == 1)
-{
-	card_color = "green";
-}
-else if(color_index == 2)
-{
-	card_color = "red";	
-}
-else
-{
-	card_color = "yellow";	
-}*/
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
@@ -81,4 +64,7 @@ else
 		draw_text(x + sprite_width / 2, y + sprite_height / 2 - 5, string(number));
 	}
 }
-
+if(highlight)
+{
+	draw_sprite(spr_highlight, 0, x - 2, y - 2);
+}
