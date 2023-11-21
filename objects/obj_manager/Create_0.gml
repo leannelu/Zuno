@@ -22,6 +22,8 @@ temp_hand = ds_list_create();
 
 player_selected = noone;
 computer_selected = noone;
+hovered = noone;
+hovered_list = ds_list_create();
 
 computer_score = 0;
 player_score = 0;
