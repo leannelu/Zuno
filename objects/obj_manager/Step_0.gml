@@ -40,6 +40,13 @@ switch(global.state)
 			{
 				//put starting card in middle
 				var _dealt_card = ds_list_find_value(deck, ds_list_size(deck) - 1);
+				var _i = 2;
+				//make sure starting card isn't a wild or action card
+				while(_dealt_card.wild || _dealt_card.number > 9)
+				{
+					_dealt_card = ds_list_find_value(deck, ds_list_size(deck) - _i);
+					_i++;
+				}
 				discardCard(deck, _dealt_card);
 			}
 			else
