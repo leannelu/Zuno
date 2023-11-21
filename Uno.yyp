@@ -49,6 +49,7 @@
     {"id":{"name":"spr_wild_shield","path":"sprites/spr_wild_shield/spr_wild_shield.yy",},"order":58,},
     {"id":{"name":"discardCard","path":"scripts/discardCard/discardCard.yy",},"order":0,},
     {"id":{"name":"spr_yellow","path":"sprites/spr_yellow/spr_yellow.yy",},"order":44,},
+    {"id":{"name":"fnt_smaller","path":"fonts/fnt_smaller/fnt_smaller.yy",},"order":3,},
     {"id":{"name":"spr_blue","path":"sprites/spr_blue/spr_blue.yy",},"order":41,},
     {"id":{"name":"spr_back_orig","path":"sprites/spr_back_orig/spr_back_orig.yy",},"order":0,},
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},"order":0,},

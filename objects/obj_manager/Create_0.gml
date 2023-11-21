@@ -22,6 +22,7 @@ temp_hand = ds_list_create();
 
 player_selected = noone;
 computer_selected = noone;
+hovered = noone;
 
 computer_score = 0;
 player_score = 0;
@@ -66,8 +67,8 @@ for(var _i = 0; _i < num_cards; _i++)
 	_new_card.number = (_i % 11) + 1;
 	_new_card.num_string = string(_new_card.number)
 	if(_i < 11) _new_card.card_color = "red";
-	else if(_i < 21) _new_card.card_color = "blue";
-	else if(_i < 31) _new_card.card_color = "yellow";
+	else if(_i < 22) _new_card.card_color = "blue";
+	else if(_i < 33) _new_card.card_color = "yellow";
 	else _new_card.card_color = "green";
 	if(_i > 43)
 	{

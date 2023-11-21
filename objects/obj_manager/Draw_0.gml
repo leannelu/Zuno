@@ -35,3 +35,41 @@ if(player_shield)
 {
 	draw_sprite(spr_shield, 0, 75, room_height - 250);	
 }
+if(hovered != noone)
+{
+	if(hovered.number == 10 && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width/2, room_height - 40, "Skip - Skip your opponent's turn");
+	}
+	else if(hovered.number == 11 && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width/2, room_height - 40, "Draw 2 - Your opponent must draw 2 cards, and their turn is skipped");
+	}
+	else if(hovered.number == 12 && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width/2, room_height - 40, "Draw 4 (Wild) - Your opponent must draw 4 cards and their turn is skipped");
+	}
+	else if(hovered.number == 13 && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width/2, room_height - 40, "Swap (Wild) - Swap hands with your opponent");
+	}
+	else if(hovered.number == 14 && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width/2, room_height - 40, "Shield (Wild) - Protects you from the next +2/+4");
+	}
+	else if(hovered.number == 15 && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width/2, room_height - 40, "Oops, all __s! (Wild) - Change the color of all cards in your opponent's hand, except wild cards");
+	}
+	else if(hovered.wild && hovered.hovering)
+	{
+		draw_set_font(fnt_smaller);
+		draw_text(room_width / 2, room_height - 40, "Wild Card - Can be played on any color. After playing this card, choose a new color");
+	}
+}
