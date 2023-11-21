@@ -12,4 +12,3 @@ number = 0;
 num_string = "";
 wild = false;
 highlight = false;
-hovering = false;
