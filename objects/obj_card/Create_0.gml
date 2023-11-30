@@ -13,3 +13,8 @@ num_string = "";
 wild = false;
 highlight = false;
 hovering = false;
+
+red_outline = false;
+blue_outline = false;
+yellow_outline = false;
+green_outline = false;

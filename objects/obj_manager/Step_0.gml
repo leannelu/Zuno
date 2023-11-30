@@ -256,45 +256,25 @@ switch(global.state)
 		}
 		var _middle_card = ds_list_find_value(discard, ds_list_size(discard) - 1);
 		//change wild card color
-		if(_middle_card.card_color == "wild")
-		{
-			wild_info = true;
-			if(keyboard_check_pressed(ord("R"))){
-				_middle_card.card_color = "red";
-				audio_play_sound(snd_change_color, 1, 0);
-				wild_info = false;
-			}
-			else if(keyboard_check_pressed(ord("B"))){
-				_middle_card.card_color = "blue";
-				audio_play_sound(snd_change_color, 1, 0);
-				wild_info = false;
-			}
-			else if(keyboard_check_pressed(ord("Y"))){
-				_middle_card.card_color = "yellow";
-				audio_play_sound(snd_change_color, 1, 0);
-				wild_info = false;
-			}
-			else if(keyboard_check_pressed(ord("G"))){
-				_middle_card.card_color = "green";
-				audio_play_sound(snd_change_color, 1, 0);
-				wild_info = false;
-			}
-		}
 		//oops all __s
-		else if(_middle_card.number == 15 && !transformed)
+		if(_middle_card.number == 15 && !transformed)
 		{
 			wild_trans_info = true;
-			if(keyboard_check_pressed(ord("R"))){
-				transformHand(computer_hand, "red");
+			var _new_color = changeColor(_middle_card);
+			if(_new_color != "")
+			{
+				transformHand(computer_hand, _new_color);	
 			}
-			else if(keyboard_check_pressed(ord("B"))){
-				transformHand(computer_hand, "blue");
-			}
-			else if(keyboard_check_pressed(ord("Y"))){
-				transformHand(computer_hand, "yellow");
-			}
-			else if(keyboard_check_pressed(ord("G"))){
-				transformHand(computer_hand, "green");
+		}
+		else if(_middle_card.card_color == "wild")
+		{
+			wild_info = true;
+			var _new_color = changeColor(_middle_card);
+			if(_new_color != "")
+			{
+				audio_play_sound(snd_change_color, 1, 0);
+				_middle_card.card_color = _new_color;
+				wild_info = false;
 			}
 		}
 		//reshuffle empty deck

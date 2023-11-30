@@ -68,3 +68,25 @@ if(highlight)
 {
 	draw_sprite(spr_highlight, 0, x - 2, y - 2);
 }
+
+if(red_outline)
+{
+	image_index = 1;
+	//draw_rectangle_color(x + 3, y + 3, x + 40, y + 65, c_aqua, c_aqua, c_aqua, c_aqua, true);
+}
+else if(blue_outline)
+{
+	image_index = 2;
+}
+else if(yellow_outline)
+{
+	image_index = 3;
+}
+else if(green_outline)
+{
+	image_index = 4;
+}
+else
+{
+	image_index = 0;
+}

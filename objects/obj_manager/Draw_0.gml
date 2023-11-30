@@ -18,14 +18,13 @@ if(global.state == STATES.COMP_TURN || global.state == STATES.COMP_RESOLVE)
 if(wild_info)
 {
 	draw_set_font(fnt_small);
-	draw_text(center_x_offset + 95, room_height / 2 - 5, 
-		"Choose a color to\nturn this card into:\nPress R for red\nPress B for blue\nPress Y for yellow\nPress G for green");
+	draw_text_ext(center_x_offset + 95, room_height / 2 - 10, "Click a color on this card to change its color to", 30, 225);
 }
 if(wild_trans_info)
 {
 	draw_set_font(fnt_small);
-	draw_text(center_x_offset + 95, room_height / 2 - 5, 
-		"Choose another\ncolor. All cards\nin your opponent's\nhand will turn\ninto that color.\nPress R for red\nPress B for blue\nPress Y for yellow\nPress G for green");
+	draw_text_ext(center_x_offset + 95, room_height / 2 - 10, 
+		"Click a color on this card.\nAll cards in your opponent's hand will turn into that color", 30, 230);
 }
 if(computer_shield)
 {
