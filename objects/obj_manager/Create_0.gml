@@ -52,6 +52,7 @@ played_sound = false;
 wild_info = false;
 wild_trans_info = false;
 transformed = false;
+swap_particles = false;
 
 computer_shield = false;
 player_shield = false;
@@ -100,3 +101,39 @@ for(var _i = 0; _i < num_cards; _i++)
 	deck[|_i].target_y = y - _i;
 	deck[|_i].original_y = y - _i;
 }
+
+particles = part_system_create();
+part_system_depth(particles, 0);
+
+skip = part_type_create();
+part_type_sprite(skip, spr_skip, 0, 0, 0);
+part_type_size(skip, 0.5, 0.9, -0.001, 0);
+part_type_speed(skip, 3, 4, 0, 0);
+part_type_direction(skip, 0, 360, 0, 0);
+part_type_alpha2(skip, 0.8, 0.3);
+part_type_life(skip, 40, 60);
+
+shield = part_type_create();
+part_type_sprite(shield, spr_shield_particles, 0, 0, 0);
+part_type_size(shield, 0.4, 0.9, -0.001, 0);
+part_type_speed(shield, 3, 4, 0, 0);
+part_type_direction(shield, 0, 360, 0, 0);
+part_type_alpha2(shield, 0.8, 0.3);
+part_type_life(shield, 40, 60);
+
+swap = part_type_create();
+part_type_sprite(swap, spr_swap, 0, 0, 0);
+part_type_size(swap, 0.4, 0.8, -0.001, 0);
+part_type_speed(swap, 3, 4, 0, 0);
+part_type_direction(swap, 0, 360, 0, 0);
+part_type_alpha2(swap, 0.8, 0.3);
+part_type_life(swap, 40, 60);
+
+firework = part_type_create();
+part_type_shape(firework, pt_shape_line);
+part_type_size(firework, 0.4, 0.8, -0.001, 0);
+part_type_color3(firework, c_red, c_yellow, c_blue);
+part_type_speed(firework, 3, 4, 0, 0);
+part_type_direction(firework, 0, 359, 0, 0);
+part_type_life(firework, 100, 150);
+part_type_orientation(firework, 0, 0, 0, 0, true);

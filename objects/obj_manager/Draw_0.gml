@@ -18,7 +18,7 @@ if(global.state == STATES.COMP_TURN || global.state == STATES.COMP_RESOLVE)
 if(wild_info)
 {
 	draw_set_font(fnt_small);
-	draw_text_ext(center_x_offset + 95, room_height / 2 - 10, "Click a color on this card to change its color to", 30, 225);
+	draw_text_ext(center_x_offset + 95, room_height / 2 - 10, "Click a color on this card to change its color", 30, 225);
 }
 if(wild_trans_info)
 {
@@ -28,7 +28,7 @@ if(wild_trans_info)
 }
 if(computer_shield)
 {
-	draw_sprite(spr_shield, 0, 75, 190);	
+	draw_sprite(spr_shield, 0, 75, 175);	
 }
 if(player_shield)
 {
@@ -59,12 +59,12 @@ if(hovered != noone)
 	else if(hovered.number == 14 && hovered.hovering)
 	{
 		draw_set_font(fnt_smaller);
-		draw_text(room_width/2, room_height - 40, "Shield (Wild) - Protects you from the next +2/+4");
+		draw_text(room_width/2, room_height - 40, "Shield (Wild) - Protects you from the next +2 or +4 card");
 	}
 	else if(hovered.number == 15 && hovered.hovering)
 	{
 		draw_set_font(fnt_smaller);
-		draw_text(room_width/2, room_height - 40, "Oops, all __s! (Wild) - Change the color of all cards in your opponent's hand, except wild cards");
+		draw_text(room_width/2, room_height - 40, "Oops, all __s! (Wild) - Change the color of all cards in your opponent's hand, except wild cards.\nThen change this card's color");
 	}
 	else if(hovered.wild && hovered.hovering)
 	{

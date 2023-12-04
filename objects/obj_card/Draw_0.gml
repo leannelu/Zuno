@@ -55,13 +55,21 @@ else
 	}
 	else if(number == 11)
 	{
+		sprite_index = asset_get_index("spr_" + card_color + "_lined");
 		draw_set_font(fnt_plus);
-		draw_text(x + sprite_width / 2, y + sprite_height / 2, "+2");
+		draw_text(x + sprite_width / 2, y + sprite_height / 2 - 10, "+2");
+		draw_set_font(fnt_small_nums);
+		draw_text(x + 14, y + 11, "+2");
+		draw_text(x + 67, y + 114, "+2");
 	}
 	else if (!wild)
 	{
+		sprite_index = asset_get_index("spr_" + card_color + "_lined");
 		draw_set_font(fnt_score);
 		draw_text(x + sprite_width / 2, y + sprite_height / 2 - 5, string(number));
+		draw_set_font(fnt_small_nums);
+		draw_text(x + 12, y + 12, string(number));
+		draw_text(x + 68, y + 113, string(number));
 	}
 }
 if(highlight)
