@@ -135,5 +135,5 @@ part_type_size(firework, 0.4, 0.8, -0.001, 0);
 part_type_color3(firework, c_red, c_yellow, c_blue);
 part_type_speed(firework, 3, 4, 0, 0);
 part_type_direction(firework, 0, 359, 0, 0);
-part_type_life(firework, 100, 150);
+part_type_life(firework, 50, 70);
 part_type_orientation(firework, 0, 0, 0, 0, true);

@@ -48,6 +48,12 @@ switch(global.state)
 					_i++;
 				}
 				discardCard(deck, _dealt_card);
+				for(var i = 0; i < ds_list_size(deck); i++)
+				{
+					deck[|i].target_depth = ds_list_size(deck) - i;
+					deck[|i].target_y = y - i;
+					deck[|i].original_y = y - i;
+				}
 			}
 			else
 			{
@@ -131,7 +137,7 @@ switch(global.state)
 							//if deck is empty and there aren't enough cards to reshuffle, stop drawing
 							if(ds_list_size(discard) == 1)
 							{
-								drawn++;
+								drawn = draw;
 								break;
 							}
 							if(move_time == 0)
@@ -267,6 +273,7 @@ switch(global.state)
 				audio_play_sound(snd_win, 1, 0);
 			}
 			if(reveal_time == 0){
+				part_system_destroy(particles);
 				room = rm_win;
 			}
 			break;
@@ -294,7 +301,7 @@ switch(global.state)
 		var _middle_card = ds_list_find_value(discard, ds_list_size(discard) - 1);
 		//change wild card color
 		//oops all __s
-		if(_middle_card.number == 15 && !transformed)
+		if(_middle_card.card_color == "wild" && _middle_card.number == 15 && !transformed)
 		{
 			wild_trans_info = true;
 			var _new_color = changeColor(_middle_card);
