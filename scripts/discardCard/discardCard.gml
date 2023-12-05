@@ -11,6 +11,6 @@ function discardCard(hand, card_id){
 	//put it in the discard pile position
 	card_id.face_up = true;
 	card_id.target_x = room_width / 2 - card_id.sprite_width / 2;
-	card_id.target_y = room_height / 2 - card_id.sprite_height / 2 - (2 * ds_list_size(obj_manager.discard));
+	card_id.target_y = room_height / 2 - card_id.sprite_height / 2 - (ds_list_size(obj_manager.discard));
 	card_id.target_depth = -ds_list_size(obj_manager.discard);
 }
