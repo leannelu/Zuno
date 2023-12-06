@@ -5,9 +5,9 @@ image_speed = 0;
 draw_self();
 draw_set_font(fnt_plus);
 draw_text(x + sprite_width / 2, y + sprite_height / 2 - 10, "+4");
-/*draw_set_font(fnt_small_nums);
+draw_set_font(fnt_small_nums);
 draw_text(x + 14, y + 11, "+4");
-draw_text(x + 67, y + 114, "+4");*/
+draw_text(x + 67, y + 114, "+4");
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);

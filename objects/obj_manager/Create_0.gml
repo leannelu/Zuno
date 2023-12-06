@@ -118,7 +118,7 @@ part_type_sprite(shield, spr_shield_particles, 0, 0, 0);
 part_type_size(shield, 0.4, 0.9, -0.001, 0);
 part_type_speed(shield, 3, 4, 0, 0);
 part_type_direction(shield, 0, 360, 0, 0);
-part_type_alpha2(shield, 0.8, 0.3);
+part_type_alpha2(shield, 0.8, 0.4);
 part_type_life(shield, 40, 60);
 
 swap = part_type_create();
@@ -126,7 +126,7 @@ part_type_sprite(swap, spr_swap, 0, 0, 0);
 part_type_size(swap, 0.4, 0.8, -0.001, 0);
 part_type_speed(swap, 3, 4, 0, 0);
 part_type_direction(swap, 0, 360, 0, 0);
-part_type_alpha2(swap, 0.8, 0.3);
+part_type_alpha2(swap, 0.8, 0.4);
 part_type_life(swap, 40, 60);
 
 firework = part_type_create();
@@ -137,3 +137,19 @@ part_type_speed(firework, 3, 4, 0, 0);
 part_type_direction(firework, 0, 359, 0, 0);
 part_type_life(firework, 50, 70);
 part_type_orientation(firework, 0, 0, 0, 0, true);
+
+two = part_type_create();
+part_type_sprite(two, spr_plus_2, 0, 0, 0);
+part_type_size(two, 0.8, 1, -0.001, 0);
+part_type_speed(two, 3, 4, 0, 0);
+part_type_direction(two, 0, 360, 0, 0);
+part_type_alpha2(two, 0.8, 0.4);
+part_type_life(two, 40, 60);
+
+four = part_type_create();
+part_type_sprite(four, spr_plus_4, 0, 0, 0);
+part_type_size(four, 0.6, 0.9, -0.001, 0);
+part_type_speed(four, 3, 4, 0, 0);
+part_type_direction(four, 0, 360, 0, 0);
+part_type_alpha2(four, 0.8, 0.4);
+part_type_life(four, 40, 60);

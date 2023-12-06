@@ -3,5 +3,5 @@
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_set_font(fnt_plus);
-draw_text(room_width / 2, room_height / 2, "You lose!\nPress space to restart");
+draw_set_font(fnt_you_win);
+draw_text(room_width / 2, 200, "You lose!");

@@ -98,6 +98,7 @@ switch(global.state)
 				}
 			}
 			compare_time = 0;
+			reveal_time = 0;
 		}
 		else
 		{
@@ -152,10 +153,18 @@ switch(global.state)
 							//delay
 							if(!played_sound) 
 							{
-								audio_play_sound(snd_draw_card, 1, 0);
-								played_sound = true;
+								if(player_selected.x == room_width / 2 - player_selected.sprite_width / 2)
+								{
+									audio_play_sound(snd_draw_card, 1, 0);
+									if(draw = 2)
+										part_particles_create(particles, player_selected.x, player_selected.y, two, 10);
+									else
+										part_particles_create(particles, player_selected.x, player_selected.y, four, 10);
+									played_sound = true;
+								}
+								else break;
 							}
-							if(compare_time == 0)
+							if(reveal_time == 0)
 							{
 								var _dealt_card = ds_list_find_value(deck, ds_list_size(deck) - 1);
 								ds_list_delete(deck, ds_list_size(deck) - 1);
@@ -440,8 +449,16 @@ switch(global.state)
 						{
 							if(!played_sound) 
 							{
-								audio_play_sound(snd_draw_card, 1, 0);
-								played_sound = true;
+								if(computer_selected.x == room_width / 2 - computer_selected.sprite_width / 2)
+								{
+									if(draw = 2)
+										part_particles_create(particles, computer_selected.x, computer_selected.y, two, 10);
+									else
+										part_particles_create(particles, computer_selected.x, computer_selected.y, four, 10);
+									audio_play_sound(snd_draw_card, 1, 0);
+									played_sound = true;
+								}
+								else break;
 							}
 							if(compare_time == 0)
 							{

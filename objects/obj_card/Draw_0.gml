@@ -15,7 +15,7 @@ else
 if(abs(y - target_y) > 1)
 {
 	y = lerp(y, target_y, 0.2);
-	depth = -1000;
+	//depth = -1000;
 }
 else
 {
@@ -35,6 +35,9 @@ else
 	{
 		draw_set_font(fnt_plus);
 		draw_text(x + sprite_width / 2, y + sprite_height / 2, "+4");
+		draw_set_font(fnt_small_nums);
+		draw_text(x + 14, y + 11, "+4");
+		draw_text(x + 67, y + 114, "+4");
 	}
 	else if(number == 13)
 	{

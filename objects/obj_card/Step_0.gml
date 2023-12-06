@@ -9,7 +9,6 @@ if(obj_manager.player_selected == noone)
 		{
 			//raises when hovered over
 			target_y = original_y - 10;
-			target_depth = -1000;
 			obj_manager.hovered = id;
 			hovering = true;
 			middle_card = ds_list_find_value(obj_manager.discard, ds_list_size(obj_manager.discard) - 1);
@@ -33,7 +32,6 @@ if(obj_manager.player_selected == noone)
 		{
 			//revert back to original position when not hovered over
 			target_y = original_y;
-			target_depth = -ds_list_find_index(obj_manager.player_hand, id);
 			hovering = false;
 		}
 	}
