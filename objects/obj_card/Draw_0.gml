@@ -55,6 +55,7 @@ else
 	else if(number == 10)
 	{
 		sprite_index = asset_get_index("spr_" + card_color + "_skip");
+		//draw_sprite_stretched(spr_skip, 0, x + 6, y + 6, sprite_get_width(spr_skip) * 0.3, sprite_get_height(spr_skip) * 0.3);
 	}
 	else if(number == 11)
 	{
@@ -83,7 +84,6 @@ if(highlight)
 if(red_outline)
 {
 	image_index = 1;
-	//draw_rectangle_color(x + 3, y + 3, x + 40, y + 65, c_aqua, c_aqua, c_aqua, c_aqua, true);
 }
 else if(blue_outline)
 {

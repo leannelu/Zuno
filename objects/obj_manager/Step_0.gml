@@ -206,6 +206,7 @@ switch(global.state)
 					if(!swap_particles)
 					{
 						part_particles_create(particles, player_selected.x, player_selected.y, swap, 10);
+						audio_play_sound(snd_swap, 1, 0);
 						swap_particles = true;
 					}
 				}
@@ -509,6 +510,7 @@ switch(global.state)
 					if(!swap_particles)
 					{
 						part_particles_create(particles, computer_selected.x, computer_selected.y, swap, 10);
+						audio_play_sound(snd_swap, 1, 0);
 						swap_particles = true;
 					}
 					if(ds_list_size(computer_hand) == 0)

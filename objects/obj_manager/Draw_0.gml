@@ -18,7 +18,7 @@ if(global.state == STATES.COMP_TURN || global.state == STATES.COMP_RESOLVE)
 if(wild_info)
 {
 	draw_set_font(fnt_small);
-	draw_text_ext(center_x_offset + 95, room_height / 2 - 10, "Click a color on this card to change its color", 30, 225);
+	draw_text_ext(center_x_offset + 95, room_height / 2 - 10, "Choose a new color by clicking a color on this card", 30, 225);
 }
 if(wild_trans_info)
 {
