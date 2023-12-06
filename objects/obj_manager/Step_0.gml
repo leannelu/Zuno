@@ -106,10 +106,10 @@ switch(global.state)
 			//skip
 			if(player_selected.number == 10) 
 			{
-				if(player_selected.x == room_width / 2 - player_selected.sprite_width / 2)
+				if(player_selected.y == player_selected.target_y && player_selected.x == player_selected.target_x)
 				{
 					audio_play_sound(snd_skip, 1, 0);
-					part_particles_create(particles, player_selected.x, player_selected.y, skip, 10);
+					part_particles_create(particles, player_selected.x + 30, player_selected.y + 60, skip, 10);
 				}
 				else
 				{
@@ -153,13 +153,13 @@ switch(global.state)
 							//delay
 							if(!played_sound) 
 							{
-								if(player_selected.x == room_width / 2 - player_selected.sprite_width / 2)
+								if(player_selected.y == player_selected.target_y && player_selected.x == player_selected.target_x)
 								{
 									audio_play_sound(snd_draw_card, 1, 0);
 									if(draw = 2)
-										part_particles_create(particles, player_selected.x, player_selected.y, two, 10);
+										part_particles_create(particles, player_selected.x + 30, player_selected.y + 60, two, 10);
 									else
-										part_particles_create(particles, player_selected.x, player_selected.y, four, 10);
+										part_particles_create(particles,player_selected.x + 30, player_selected.y + 60, four, 10);
 									played_sound = true;
 								}
 								else break;
@@ -201,11 +201,11 @@ switch(global.state)
 			//swap
 			else if(player_selected.number == 13)
 			{
-				if(player_selected.x == room_width / 2 - player_selected.sprite_width / 2)
+				if(player_selected.y == player_selected.target_y && player_selected.x == player_selected.target_x)
 				{
 					if(!swap_particles)
 					{
-						part_particles_create(particles, player_selected.x, player_selected.y, swap, 10);
+						part_particles_create(particles, player_selected.x + 30, player_selected.y + 60, swap, 10);
 						audio_play_sound(snd_swap, 1, 0);
 						swap_particles = true;
 					}
@@ -250,11 +250,11 @@ switch(global.state)
 			//shield
 			else if(player_selected.number == 14)
 			{
-				if(player_selected.x == player_selected.target_x)
+				if(player_selected.y == player_selected.target_y && player_selected.x == player_selected.target_x)
 				{
 					player_shield = true;
 					audio_play_sound(snd_shield, 1, 0);
-					part_particles_create(particles, player_selected.x, player_selected.y, shield, 10);
+					part_particles_create(particles, player_selected.x + 30, player_selected.y + 60, shield, 10);
 				}
 				else
 				{
@@ -406,10 +406,10 @@ switch(global.state)
 			//skip
 			if(computer_selected.number == 10) 
 			{
-				if(computer_selected.x == room_width / 2 - computer_selected.sprite_width / 2)
+				if(computer_selected.y == computer_selected.target_y && computer_selected.x == computer_selected.target_x)
 				{
 					audio_play_sound(snd_skip, 1, 0);
-					part_particles_create(particles, computer_selected.x, computer_selected.y, skip, 10);
+					part_particles_create(particles, computer_selected.x + 30, computer_selected.y + 60, skip, 10);
 				}
 				else
 				{
@@ -452,12 +452,12 @@ switch(global.state)
 						{
 							if(!played_sound) 
 							{
-								if(computer_selected.x == room_width / 2 - computer_selected.sprite_width / 2)
+								if(computer_selected.y == computer_selected.target_y && computer_selected.x == computer_selected.target_x)
 								{
 									if(draw = 2)
-										part_particles_create(particles, computer_selected.x, computer_selected.y, two, 10);
+										part_particles_create(particles, computer_selected.x + 30, computer_selected.y + 60, two, 10);
 									else
-										part_particles_create(particles, computer_selected.x, computer_selected.y, four, 10);
+										part_particles_create(particles, computer_selected.x + 30, computer_selected.y + 60, four, 10);
 									audio_play_sound(snd_draw_card, 1, 0);
 									played_sound = true;
 								}
@@ -505,11 +505,11 @@ switch(global.state)
 			//swap
 			else if(computer_selected.number == 13)
 			{
-				if(computer_selected.x == room_width / 2 - computer_selected.sprite_width / 2)
+				if(computer_selected.y == computer_selected.target_y && computer_selected.x == computer_selected.target_x)
 				{
 					if(!swap_particles)
 					{
-						part_particles_create(particles, computer_selected.x, computer_selected.y, swap, 10);
+						part_particles_create(particles, computer_selected.x + 30, computer_selected.y + 60, swap, 10);
 						audio_play_sound(snd_swap, 1, 0);
 						swap_particles = true;
 					}
@@ -553,10 +553,10 @@ switch(global.state)
 			//shield
 			else if(computer_selected.number == 14)
 			{
-				if(computer_selected.x == room_width / 2 - computer_selected.sprite_width / 2)
+				if(computer_selected.y == computer_selected.target_y && computer_selected.x == computer_selected.target_x)
 				{
 					audio_play_sound(snd_shield, 1, 0);
-					part_particles_create(particles, computer_selected.x, computer_selected.y, shield, 10);
+					part_particles_create(particles, computer_selected.x + 30, computer_selected.y + 60, shield, 10);
 				}
 				else
 				{

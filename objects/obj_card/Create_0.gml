@@ -13,6 +13,8 @@ num_string = "";
 wild = false;
 highlight = false;
 hovering = false;
+x_collision = sprite_width;
+y_collision = sprite_height;
 
 red_outline = false;
 blue_outline = false;

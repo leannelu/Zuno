@@ -5,8 +5,30 @@ if(obj_manager.player_selected == noone)
 {
 	if(in_player_hand)
 	{
-		if(point_in_rectangle(mouse_x, mouse_y, x, y, x + min(obj_manager.player_x_offset - 1, sprite_width), y + sprite_height) && global.state = STATES.PLAYER_TURN)
+		with(obj_manager) player_x_offset = clamp(hand_x_offset - (9 * (ds_list_size(player_hand) - hand_count)), 45, hand_x_offset);
+		if (ds_list_size(obj_manager.player_hand) > 31)
 		{
+			setCollisionBoxes(31);
+		}
+		else if(ds_list_size(obj_manager.player_hand) > 16)
+		{
+			setCollisionBoxes(15);
+		}
+		else
+		{
+			if (ds_list_find_index(obj_manager.player_hand, id) == ds_list_size(obj_manager.player_hand) - 1)
+			{
+				x_collision = sprite_width;	
+			}
+			else
+			{
+				x_collision = min(obj_manager.player_x_offset - 1, sprite_width);	
+			}
+			y_collision = sprite_height;	
+		}
+		if(point_in_rectangle(mouse_x, mouse_y, x, y, x + x_collision, y + y_collision) && global.state = STATES.PLAYER_TURN)
+		{
+			if(!hovering) audio_play_sound(snd_card_hover, 1, 0);
 			//raises when hovered over
 			target_y = original_y - 10;
 			obj_manager.hovered = id;
