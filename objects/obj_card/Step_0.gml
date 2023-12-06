@@ -5,7 +5,7 @@ if(obj_manager.player_selected == noone)
 {
 	if(in_player_hand)
 	{
-		if(position_meeting(mouse_x, mouse_y, id) && global.state = STATES.PLAYER_TURN)
+		if(point_in_rectangle(mouse_x, mouse_y, x, y, x + min(obj_manager.player_x_offset - 1, sprite_width), y + sprite_height) && global.state = STATES.PLAYER_TURN)
 		{
 			//raises when hovered over
 			target_y = original_y - 10;

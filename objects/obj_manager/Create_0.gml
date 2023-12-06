@@ -36,6 +36,7 @@ center_x_offset = 210;
 center_y_offset = 75;
 
 player_x_offset = hand_x_offset;
+player_y_offset = 131;
 comp_x_offset = hand_x_offset;
 
 reveal_time = 0;

@@ -296,12 +296,14 @@ switch(global.state)
 			//if there are too many cards, put in another row
 			if (_i > 31)
 			{
+				player_y_offset = 70;
 				player_hand[|_i].target_y = room_height - hand_y_offset - 61;
 				player_hand[|_i].original_y = room_height - hand_y_offset - 61;
 				player_hand[|_i].target_x = center_x_offset + (_i - 32) * player_x_offset;
 			}
 			else if(_i > 15)
 			{
+				player_y_offset = 35;
 				player_hand[|_i].target_y = room_height - hand_y_offset - 96;
 				player_hand[|_i].original_y = room_height - hand_y_offset - 96;
 				player_hand[|_i].target_x = center_x_offset + (_i - 16) * player_x_offset;
