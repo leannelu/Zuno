@@ -634,16 +634,22 @@ switch(global.state)
 					else if(_middle_card.number == 15 && new_color == "yellow") _middle_card.card_color = choose("red", "blue", "green");
 					else 
 					{
-					//	_middle_card.card_color = choose("red", "blue", "yellow", "green");
 						var options = ds_list_create();
 						for(var i = 0; i < ds_list_size(computer_hand); i++)
 						{
 							var card = ds_list_find_value(computer_hand, i);
 							if(card.card_color != "wild") ds_list_add(options, card);
 						}
-						var index = irandom_range(0, ds_list_size(options));
-						var card = ds_list_find_value(options, index);
-						_middle_card.card_color = card.card_color;
+						if(ds_list_size(options) > 0)
+						{
+							var index = irandom_range(0, ds_list_size(options) - 1);
+							var card = ds_list_find_value(options, index);
+							_middle_card.card_color = card.card_color;
+						}
+						else
+						{
+							_middle_card.card_color = choose("red", "blue", "yellow", "green");
+						}
 					}
 					audio_play_sound(snd_change_color, 1, 0);
 				}
