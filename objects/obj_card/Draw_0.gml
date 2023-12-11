@@ -91,7 +91,7 @@ else
 }
 if(highlight)
 {
-	draw_sprite(spr_highlight, 0, x - 2, y - 2);
+	draw_sprite(spr_outline2, 0, x - 3, y - 3);
 }
 
 if(red_outline)

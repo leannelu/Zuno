@@ -201,6 +201,11 @@ switch(global.state)
 			//swap
 			else if(player_selected.number == 13)
 			{
+				if(ds_list_size(player_hand) == 0)
+				{
+					global.state = STATES.PLAYER_RESOLVE;
+					break;
+				}
 				if(player_selected.y == player_selected.target_y && player_selected.x == player_selected.target_x)
 				{
 					if(!swap_particles)
@@ -216,11 +221,6 @@ switch(global.state)
 				}
 				if(compare_time == 0)
 				{
-					if(ds_list_size(player_hand) == 0)
-					{
-						global.state = STATES.PLAYER_RESOLVE;
-						break;
-					}
 					player_selected = noone;
 					ds_list_copy(temp_hand, player_hand);
 					ds_list_copy(player_hand, computer_hand);
@@ -523,6 +523,11 @@ switch(global.state)
 			//swap
 			else if(computer_selected.number == 13)
 			{
+				if(ds_list_size(computer_hand) == 0)
+				{
+					global.state = STATES.COMP_RESOLVE;
+					break;
+				}
 				if(computer_selected.y == computer_selected.target_y && computer_selected.x == computer_selected.target_x)
 				{
 					if(!swap_particles)
@@ -530,11 +535,6 @@ switch(global.state)
 						part_particles_create(particles, computer_selected.x + 30, computer_selected.y + 60, swap, 10);
 						audio_play_sound(snd_swap, 1, 0);
 						swap_particles = true;
-					}
-					if(ds_list_size(computer_hand) == 0)
-					{
-						global.state = STATES.COMP_RESOLVE;
-						break;
 					}
 				}
 				else
