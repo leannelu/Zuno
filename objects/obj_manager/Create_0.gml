@@ -154,3 +154,10 @@ part_type_speed(four, 3, 4, 0, 0);
 part_type_direction(four, 0, 360, 0, 0);
 part_type_alpha2(four, 0.8, 0.4);
 part_type_life(four, 40, 60);
+
+transform = part_type_create();
+part_type_shape(transform, pt_shape_pixel);
+part_type_size(transform, 4, 5, 0, 0);
+part_type_speed(transform, 3, 4, 0, 0);
+part_type_direction(transform, 30, 150, 0, 0);
+part_type_life(transform, 70, 100);

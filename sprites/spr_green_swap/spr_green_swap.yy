@@ -25,8 +25,8 @@
     "path": "texturegroups/Default",
   },
   "swatchColours": null,
-  "gridX": 41,
-  "gridY": 66,
+  "gridX": 15,
+  "gridY": 12,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7cc20ee1-8df2-48b0-9c76-6d3617106f87",},
   ],
@@ -64,6 +64,7 @@
     "eventStubScript": null,
   },
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"21d61eb4-c676-490a-80e9-2257c8642c94","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1",},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ab3f022e-d485-4ef2-b01e-958658ed4413","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,

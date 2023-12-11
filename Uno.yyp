@@ -17,6 +17,7 @@
     {"id":{"name":"obj_back_button","path":"objects/obj_back_button/obj_back_button.yy",},"order":12,},
     {"id":{"name":"spr_blue_swap","path":"sprites/spr_blue_swap/spr_blue_swap.yy",},"order":55,},
     {"id":{"name":"snd_unplayable","path":"sounds/snd_unplayable/snd_unplayable.yy",},"order":8,},
+    {"id":{"name":"spr_wild_corners","path":"sprites/spr_wild_corners/spr_wild_corners.yy",},"order":81,},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"order":1,},
     {"id":{"name":"spr_swap","path":"sprites/spr_swap/spr_swap.yy",},"order":70,},
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},"order":77,},

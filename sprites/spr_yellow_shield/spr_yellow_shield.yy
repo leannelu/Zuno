@@ -26,7 +26,7 @@
   },
   "swatchColours": null,
   "gridX": 15,
-  "gridY": 17,
+  "gridY": 12,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7cc20ee1-8df2-48b0-9c76-6d3617106f87",},
   ],

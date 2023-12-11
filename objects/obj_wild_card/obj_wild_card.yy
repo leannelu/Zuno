@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_wild_card",
   "spriteId": {
-    "name": "spr_wild",
-    "path": "sprites/spr_wild/spr_wild.yy",
+    "name": "spr_wild_corners",
+    "path": "sprites/spr_wild_corners/spr_wild_corners.yy",
   },
   "solid": false,
   "visible": true,

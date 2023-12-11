@@ -36,8 +36,8 @@ else
 		draw_set_font(fnt_plus);
 		draw_text(x + sprite_width / 2, y + sprite_height / 2, "+4");
 		draw_set_font(fnt_small_nums);
-		draw_text(x + 14, y + 11, "+4");
-		draw_text(x + 67, y + 114, "+4");
+		draw_text(x + 15, y + 11, "+4");
+		draw_text(x + 66, y + 114, "+4");
 	}
 	else if(number == 13)
 	{
@@ -46,6 +46,8 @@ else
 	else if(number == 14)
 	{
 		sprite_index = asset_get_index("spr_" + card_color + "_shield");
+		draw_sprite_stretched(spr_shield_particles, 0, x + 6, y + 6, sprite_get_width(spr_shield_particles) * 0.25, sprite_get_height(spr_shield_particles) * 0.25);
+		draw_sprite_stretched(spr_shield_particles, 0, x + 58, y + 107, sprite_get_width(spr_shield_particles) * 0.25, sprite_get_height(spr_shield_particles) * 0.25);
 	}
 	else if(number == 15)
 	{
@@ -74,6 +76,10 @@ else
 		draw_set_font(fnt_small_nums);
 		draw_text(x + 12, y + 12, string(number));
 		draw_text(x + 68, y + 113, string(number));
+	}
+	else if(card_color == "wild")
+	{
+		sprite_index = spr_wild_corners;	
 	}
 }
 if(highlight)

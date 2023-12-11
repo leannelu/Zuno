@@ -319,6 +319,9 @@ switch(global.state)
 			var _new_color = changeColor(_middle_card);
 			if(_new_color != "")
 			{
+				/*
+				part_type_color1(transform, c_yellow);
+				part_particles_create(particles, _middle_card.x, _middle_card.y, transform, 20);*/
 				transformHand(computer_hand, _new_color);	
 			}
 		}
@@ -381,20 +384,32 @@ switch(global.state)
 					}
 					else //if there are no playable cards, draw from deck
 					{
-						var _comp_hand_count = ds_list_size(computer_hand);
-						var _dealt_card = ds_list_find_value(deck, ds_list_size(deck) - 1);
-						ds_list_delete(deck, ds_list_size(deck) - 1);
-						ds_list_add(computer_hand, _dealt_card);
-						audio_play_sound(snd_card, 1, 0);
-						_dealt_card.target_x = center_x_offset + _comp_hand_count * hand_x_offset;
-						_dealt_card.target_y = hand_y_offset;
-						//TESTING
-						//_dealt_card.face_up = true;
-						comp_i = 0;
-						reveal_time = 0;
-						compare_time = 0;
-						next_turn = "computer";
-						global.state = STATES.COMP_RESOLVE;
+						if(ds_list_size(deck) > 0)
+						{
+							var _comp_hand_count = ds_list_size(computer_hand);
+							var _dealt_card = ds_list_find_value(deck, ds_list_size(deck) - 1);
+							ds_list_delete(deck, ds_list_size(deck) - 1);
+							ds_list_add(computer_hand, _dealt_card);
+							audio_play_sound(snd_card, 1, 0);
+							_dealt_card.target_x = center_x_offset + _comp_hand_count * hand_x_offset;
+							_dealt_card.target_y = hand_y_offset;
+							//TESTING
+							//_dealt_card.face_up = true;
+							comp_i = 0;
+							reveal_time = 0;
+							compare_time = 0;
+							next_turn = "computer";
+							global.state = STATES.COMP_RESOLVE;
+						}
+						else
+						{
+							next_turn = "player";
+							comp_i = 0;
+							reveal_time = 0;
+							compare_time = 0;
+							played_sound = false;
+							global.state = STATES.COMP_RESOLVE;
+						}
 					}
 				}
 			}
@@ -437,7 +452,7 @@ switch(global.state)
 						{
 							if(ds_list_size(discard) == 1)
 							{
-								drawn++;
+								drawn = draw;
 								break;
 							}
 							if(move_time == 0)
@@ -619,7 +634,6 @@ switch(global.state)
 		{
 			if(move_time == 0)
 			{
-				next_turn = "player";
 				num_cards = ds_list_size(discard) -1;
 				shuffle_time = 0;
 				global.state = STATES.RESHUFFLE;
