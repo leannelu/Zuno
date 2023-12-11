@@ -86,6 +86,9 @@ for(var _i = 0; _i < num_cards; _i++)
 		if(_i == 50) _new_card.number = 13; //swap
 		if(_i == 51) _new_card.number = 14; //shield
 		if(_i == 52) _new_card.number = 15; //oops, all __s!
+		
+		//TESTING
+		//_new_card.number = 15;
 	}
 	_new_card.face_up = false;
 	_new_card.in_player_hand = false;
@@ -158,6 +161,6 @@ part_type_life(four, 40, 60);
 transform = part_type_create();
 part_type_shape(transform, pt_shape_pixel);
 part_type_size(transform, 4, 5, 0, 0);
-part_type_speed(transform, 3, 4, 0, 0);
-part_type_direction(transform, 30, 150, 0, 0);
-part_type_life(transform, 70, 100);
+part_type_speed(transform, 4, 5, -0.04, 0);
+part_type_direction(transform, 10, 170, 0, 0);
+part_type_life(transform, 80, 100);

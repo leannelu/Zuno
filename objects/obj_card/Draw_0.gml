@@ -52,7 +52,14 @@ else
 	else if(number == 15)
 	{
 		draw_set_font(fnt_small);
-		draw_text(x + sprite_width / 2, y + sprite_height / 2, "Oops,\nall\n__s!");
+		draw_text_ext(x + sprite_width / 2, y + sprite_height / 2 - 15, "Oops, all", 30, 40);
+		if(!obj_manager.transformed) draw_text(x + sprite_width / 2, y + sprite_height / 2 + 25, "__s!");
+		else
+		{
+			if(oops_color != "red") draw_set_font(fnt_smaller);
+			if(oops_color == "blue") draw_set_font(fnt_oops_blue);
+			draw_text(x + sprite_width / 2, y + sprite_height / 2 + 25, oops_color + "s!");
+		}
 	}
 	else if(number == 10)
 	{

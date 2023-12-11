@@ -42,6 +42,7 @@
     {"id":{"name":"spr_blue_skip","path":"sprites/spr_blue_skip/spr_blue_skip.yy",},"order":46,},
     {"id":{"name":"rm_special","path":"rooms/rm_special/rm_special.yy",},"order":5,},
     {"id":{"name":"fnt_small_nums","path":"fonts/fnt_small_nums/fnt_small_nums.yy",},"order":4,},
+    {"id":{"name":"fnt_oops_blue","path":"fonts/fnt_oops_blue/fnt_oops_blue.yy",},"order":8,},
     {"id":{"name":"spr_blue_lined","path":"sprites/spr_blue_lined/spr_blue_lined.yy",},"order":74,},
     {"id":{"name":"snd_change_color","path":"sounds/snd_change_color/snd_change_color.yy",},"order":4,},
     {"id":{"name":"snd_lose","path":"sounds/snd_lose/snd_lose.yy",},"order":2,},

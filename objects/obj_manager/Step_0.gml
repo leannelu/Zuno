@@ -319,9 +319,12 @@ switch(global.state)
 			var _new_color = changeColor(_middle_card);
 			if(_new_color != "")
 			{
-				/*
-				part_type_color1(transform, c_yellow);
-				part_particles_create(particles, _middle_card.x, _middle_card.y, transform, 20);*/
+				if(_new_color == "yellow") part_type_color1(transform, c_yellow);
+				if(_new_color == "green") part_type_color1(transform, c_green);
+				if(_new_color == "blue") part_type_color1(transform, c_blue);
+				if(_new_color == "red") part_type_color1(transform, c_red);
+				_middle_card.oops_color = _new_color;
+				part_particles_create(particles, _middle_card.x + 41, _middle_card.y, transform, 40);
 				transformHand(computer_hand, _new_color);	
 			}
 		}
@@ -620,11 +623,28 @@ switch(global.state)
 				if(_middle_card.number == 15 && !transformed)
 				{
 					new_color = choose("red", "blue", "yellow", "green");
+					_middle_card.oops_color = new_color;
 					transformHand(player_hand, new_color);
 				}
 				else 
 				{
-					_middle_card.card_color = choose("red", "blue", "yellow", "green");
+					if(_middle_card.number == 15 && new_color == "red") _middle_card.card_color = choose("blue", "yellow", "green");
+					else if(_middle_card.number == 15 && new_color == "blue") _middle_card.card_color = choose("red", "yellow", "green");
+					else if(_middle_card.number == 15 && new_color == "green") _middle_card.card_color = choose("red", "yellow", "blue");
+					else if(_middle_card.number == 15 && new_color == "yellow") _middle_card.card_color = choose("red", "blue", "green");
+					else 
+					{
+					//	_middle_card.card_color = choose("red", "blue", "yellow", "green");
+						var options = ds_list_create();
+						for(var i = 0; i < ds_list_size(computer_hand); i++)
+						{
+							var card = ds_list_find_value(computer_hand, i);
+							if(card.card_color != "wild") ds_list_add(options, card);
+						}
+						var index = irandom_range(0, ds_list_size(options));
+						var card = ds_list_find_value(options, index);
+						_middle_card.card_color = card.card_color;
+					}
 					audio_play_sound(snd_change_color, 1, 0);
 				}
 			}

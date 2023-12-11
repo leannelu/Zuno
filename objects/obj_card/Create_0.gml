@@ -20,3 +20,5 @@ red_outline = false;
 blue_outline = false;
 yellow_outline = false;
 green_outline = false;
+
+oops_color = "";
